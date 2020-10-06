@@ -1,0 +1,32 @@
+.new-tweet {
+}
+
+.new-tweet button {
+  background-color: #4056a1;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  font-size: 30px;
+}
+
+#tweet-text {
+  border: none;
+  border-bottom: 3px solid #545149;
+  width: 100%;
+  background-color: #f4f1ec;
+  font-weight: 500;
+  color: #545149;
+  padding-top: 20px;
+  padding-bottom: 2px;
+}
+
+.new-tweet div {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.counter {
+  font-weight: bold;
+}
