@@ -30,6 +30,15 @@ body {
   background-color: #f4f1ec;
 }
 
+body nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header{
+  margin-top: 120px;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
