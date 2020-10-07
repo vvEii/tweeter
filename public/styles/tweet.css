@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: space-around;
+  margin-bottom: 30px;
 }
 
 .tweet header {
@@ -13,10 +14,15 @@
   justify-content: space-between;
   height: 4em;
   padding: 0 10px 0 10px;
+  align-content: center;
+}
+
+header .handle {
+  margin-left: auto;
 }
 
 header .user {
-  margin-left: auto;
+  margin-left: 10px;
 }
 
 .tweet-content {
@@ -32,6 +38,7 @@ header .user {
   border-bottom: 5px solid #545149;
   width: 100%;
   background-color: #f5f1ed;
+  height: 2em;
 }
 
 .tweet footer {
@@ -45,8 +52,8 @@ footer .icons {
   margin-left: auto;
 }
 .tweet img {
-  width: 4em;
-  height: 4em;
+  width: 3em;
+  height: 3em;
 }
 .tweet:hover {
   box-shadow: 5px 10px #6e85d2;
