@@ -5,6 +5,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 // Fake data taken from initial-tweets.json
+const LIMIT = 140;
 
 $(document).ready(function () {
   loadTweets();
@@ -21,7 +22,7 @@ const createTweetElement = function (data) {
     </header>
     <div class="tweet-content">
       <label for="tweet-text"
-        >${data.content.text}</label
+        >${escape(data.content.text)}</label
       >
       <textarea name="text"></textarea>
     </div>
@@ -33,7 +34,15 @@ const createTweetElement = function (data) {
   return $tweet;
 };
 
+//preventing XSS with escaping
+const escape = function (str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const renderTweets = function (tweets) {
+  tweets.reverse();
   tweets.forEach((item) => {
     let $tweet = createTweetElement(item);
     $('#tweets-container').append($tweet);
@@ -43,20 +52,41 @@ const renderTweets = function (tweets) {
 const submitForm = function (e) {
   e.preventDefault();
   const $form = $(this);
-  let data = $form.serialize();
-  console.log(data);
+  const $textarea = $('textarea');
+  const data = $form.serialize();
+  const slicedData = data.slice(5);
+  const $section = $('.new-tweet');
+  const errOverLimit = 'The tweet is too long, keep it below 140 words.';
+  const errEmpty = "❗The tweet can't be empty.❗";
+  $('.err').remove();
+  if (slicedData.length > LIMIT) {
+    const $errMessage = $(`<p>${errOverLimit}</p>`).addClass('err');
+    $section.prepend($errMessage);
+    $errMessage.hide();
+    $errMessage.slideDown('slow');
+    return;
+  }
+  if (slicedData === '') {
+    const $errMessage = $(`<p>${errEmpty}</p>`).addClass('err');
+    $section.prepend($errMessage);
+    $errMessage.hide();
+    $errMessage.slideDown('slow');
+    return;
+  }
   $.post('/tweets/', data)
     .then((res) => {
-      console.log('good');
+      loadTweets();
     })
     .catch((err) => {
       console.log(err);
     });
+  $textarea.val('');
 };
 
 const loadTweets = function () {
   $.get('/tweets/')
     .then((res) => {
+      $('#tweets-container').empty();
       renderTweets(res);
     })
     .catch((err) => {
