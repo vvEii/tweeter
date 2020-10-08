@@ -11,6 +11,7 @@ $(document).ready(function () {
       const $showNewTweetArrow = $('#arrowShow');
       $showNewTweetArrow.hide();
     } else {
+      $showNewTweetArrow.show();
       $scrollUpBtn.hide();
     }
   });
@@ -29,9 +30,7 @@ const showNewTweet = function () {
 
 const scrollUp = function (event) {
   event.preventDefault();
-  const $showNewTweetArrow = $('#arrowShow');
   const $textArea = $('#tweet-text');
-  $textArea.focus();
-  $showNewTweetArrow.show();
   $('html, body').animate({ scrollTop: 0 }, '300');
+  $textArea.focus();
 };

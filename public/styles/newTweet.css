@@ -6,6 +6,10 @@
   font-size: 30px;
 }
 
+.new-tweet-container label {
+  font-weight: bold;
+}
+
 #tweet-text {
   border: none;
   border-bottom: 5px solid #545149;

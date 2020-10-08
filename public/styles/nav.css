@@ -1,5 +1,5 @@
 nav {
-  background-color: #4056a1;
+  background-color: #d89d2e;
   color: #ffffff;
   height: 120px;
   width: 100%;
@@ -16,5 +16,10 @@ nav span {
 nav p {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
+}
 
+@media only screen and (min-width: 768px) {
+  nav {
+    background-color: #4056a1;
+  }
 }

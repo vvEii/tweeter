@@ -24,6 +24,7 @@ body {
 }
 
 .container {
+  margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
   width: 90%;
@@ -71,6 +72,19 @@ body nav {
   height: 3.5em;
   background-color: #5e7fee;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+
+/* desktop screen */
+@media only screen and (min-width: 768px) {
+  .header {
+    width: 40%;
+    margin-top: 200px;
+    margin-left: auto;
+  }
+  .container {
+    margin-top: 200px;
+    width: 50%;
+  }
+  body {
+    display: flex;
+  }
+}
