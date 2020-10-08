@@ -47,6 +47,30 @@ body nav {
 .dropdown span {
   color: red;
 }
+
+.dropdown span:hover {
+  font-size: 1.5em;
+}
+
+.btn-scrollUp {
+  display: none;
+  background-color: #4056a1;
+  color: #f4f1ec;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+}
+
+.btn-scrollUp:hover {
+  cursor: pointer;
+  width: 3.5em;
+  height: 3.5em;
+  background-color: #5e7fee;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
