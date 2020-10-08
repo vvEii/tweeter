@@ -28,7 +28,11 @@ const createTweetElement = function (data) {
     </div>
     <footer>
       <p>10 days ago</p>
-      <p class="icons">some icons</p>
+      <div class="icons-container">
+      <i class="fas fa-flag"></i>
+      <i class="fas fa-retweet"></i>
+      <i class="fas fa-heart"></i>
+      </div>
     </footer>
   </article>`;
   return $tweet;

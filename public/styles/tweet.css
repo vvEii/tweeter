@@ -1,4 +1,3 @@
-
 .tweet {
   border: 5px solid #545149;
   display: flex;
@@ -48,9 +47,10 @@ header .user {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
 }
 
-footer .icons {
+footer .icons-container {
   margin-left: auto;
 }
 .tweet img {
