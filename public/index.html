@@ -26,6 +26,7 @@
       type="text/javascript"
       src="/scripts/composer-char-counter.js"
     ></script>
+    <script type="text/javascript" src="/scripts/composer.js"></script>
     <!-- Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
@@ -37,7 +38,10 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <p><strong>Write</strong> a new tweet</p>
+      <div class="dropdown">
+        <p><strong>Write</strong> a new tweet</p>
+        <span>&#8595;</span>
+      </div>
     </nav>
 
     <!-- header -->
@@ -52,7 +56,7 @@
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
+      <section class="new-tweet-container">
         <h2>Compose Tweet</h2>
         <form>
           <label for="tweet-text">What are you humming about?</label>
@@ -63,9 +67,7 @@
           </div>
         </form>
       </section>
-      <section id="tweets-container">
-
-      </section>
+      <section class="tweets-container"></section>
     </main>
   </body>
 </html>

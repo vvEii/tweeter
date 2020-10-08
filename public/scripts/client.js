@@ -9,7 +9,7 @@ const LIMIT = 140;
 
 $(document).ready(function () {
   loadTweets();
-  $('.new-tweet form').on('submit', submitForm);
+  $('.new-tweet-container form').on('submit', submitForm);
 });
 
 const createTweetElement = function (data) {
@@ -45,7 +45,7 @@ const renderTweets = function (tweets) {
   tweets.reverse();
   tweets.forEach((item) => {
     let $tweet = createTweetElement(item);
-    $('#tweets-container').append($tweet);
+    $('.tweets-container').append($tweet);
   });
 };
 
@@ -55,7 +55,7 @@ const submitForm = function (e) {
   const $textarea = $('textarea');
   const data = $form.serialize();
   const slicedData = data.slice(5);
-  const $section = $('.new-tweet');
+  const $section = $('.new-tweet-container');
   const errOverLimit = 'The tweet is too long, keep it below 140 words.';
   const errEmpty = "❗The tweet can't be empty.❗";
   $('.err').remove();
@@ -86,7 +86,7 @@ const submitForm = function (e) {
 const loadTweets = function () {
   $.get('/tweets/')
     .then((res) => {
-      $('#tweets-container').empty();
+      $('.tweets-container').empty();
       renderTweets(res);
     })
     .catch((err) => {

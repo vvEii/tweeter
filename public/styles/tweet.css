@@ -1,3 +1,4 @@
+
 .tweet {
   border: 5px solid #545149;
   display: flex;
@@ -5,6 +6,7 @@
   justify-content: space-around;
   align-items: space-around;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .tweet header {

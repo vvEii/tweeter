@@ -36,8 +36,16 @@ body nav {
   width: 100%;
 }
 
-.header{
+.header {
   margin-top: 120px;
+}
+
+.dropdown {
+  text-align: center;
+}
+
+.dropdown span {
+  color: red;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
