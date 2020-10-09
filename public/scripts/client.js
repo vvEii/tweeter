@@ -85,6 +85,7 @@ const submitForm = function (e) {
       console.log(err);
     });
   $textarea.val('');
+  $('.counter').val(140);
 };
 
 const loadTweets = function () {
