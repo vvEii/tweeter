@@ -36,7 +36,7 @@ header .user {
   border-bottom: 5px solid #545149;
   width: 90%;
   background-color: #f5f1ed;
-  height: 2.5em;
+  height: 2.8em;
 }
 
 .tweet footer {
@@ -56,4 +56,10 @@ footer .icons-container {
 }
 .tweet:hover {
   box-shadow: 5px 10px #6e85d2;
+}
+
+@media only screen and (min-width: 768px) {
+  .tweet {
+    margin-top: 0;
+  }
 }
