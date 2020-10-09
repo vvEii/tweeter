@@ -17,3 +17,6 @@ Also, this project is using responsive design for the UI.
 
 - Express
 - Node 5.10.x or above
+
+!["Screenshot of desktop view tweet page"](https://github.com/vvEii/tweeter/blob/master/docs/desktop%20view.png?raw=true)
+!["Screenshot of mobile view tweet page"](https://github.com/vvEii/tweeter/blob/master/docs/mobile%20view.png?raw=true)
