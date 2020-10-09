@@ -21,10 +21,7 @@ const createTweetElement = function (data) {
       <p class="handle">${data.user.handle}</p>
     </header>
     <div class="tweet-content">
-      <label for="tweet-text"
-        >${escape(data.content.text)}</label
-      >
-      <textarea name="text"></textarea>
+      <textarea name="text">${escape(data.content.text)}</textarea>
     </div>
     <footer>
       <p>10 days ago</p>
@@ -57,26 +54,28 @@ const submitForm = function (e) {
   e.preventDefault();
   const $form = $(this);
   const $textarea = $('textarea');
-  const data = $form.serialize();
-  const slicedData = data.slice(5);
+  const textLength = $textarea.val().length;
   const $section = $('.new-tweet-container');
   const errOverLimit = 'The tweet is too long, keep it below 140 words.';
   const errEmpty = "❗The tweet can't be empty.❗";
   $('.err').remove();
-  if (slicedData.length > LIMIT) {
+
+  if (textLength > LIMIT) {
     const $errMessage = $(`<p>${errOverLimit}</p>`).addClass('err');
     $section.prepend($errMessage);
     $errMessage.hide();
     $errMessage.slideDown('slow');
     return;
   }
-  if (slicedData === '') {
+  if ($textarea.val() === '') {
     const $errMessage = $(`<p>${errEmpty}</p>`).addClass('err');
     $section.prepend($errMessage);
     $errMessage.hide();
     $errMessage.slideDown('slow');
     return;
   }
+  const data = $form.serialize();
+  
   $.post('/tweets/', data)
     .then((res) => {
       loadTweets();

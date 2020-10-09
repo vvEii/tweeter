@@ -28,18 +28,15 @@ header .user {
 
 .tweet-content {
   padding: 10px;
-}
-
-.tweet-content label {
-  padding: 15px;
+  text-align: center;
 }
 
 .tweet-content textarea {
   border: none;
   border-bottom: 5px solid #545149;
-  width: 100%;
+  width: 90%;
   background-color: #f5f1ed;
-  height: 2em;
+  height: 2.5em;
 }
 
 .tweet footer {
