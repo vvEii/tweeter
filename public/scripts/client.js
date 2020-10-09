@@ -26,8 +26,8 @@ const createTweetElement = function (data) {
     <footer>
       <p>10 days ago</p>
       <div class="icons-container">
-      <i class="fas fa-flag"></i>
-      <i class="fas fa-retweet"></i>
+      <i class="fas fa-flag"></i>&nbsp;
+      <i class="fas fa-retweet"></i>&nbsp;
       <i class="fas fa-heart"></i>
       </div>
     </footer>
@@ -75,7 +75,7 @@ const submitForm = function (e) {
     return;
   }
   const data = $form.serialize();
-  
+
   $.post('/tweets/', data)
     .then((res) => {
       loadTweets();
