@@ -32,6 +32,7 @@ const createTweetElement = function (data) {
       </div>
     </footer>
   </article>`;
+  console.log(data.user);
   return $tweet;
 };
 
@@ -60,15 +61,9 @@ const submitForm = function (e) {
   const errEmpty = "❗The tweet can't be empty.❗";
   $('.err').remove();
 
-  if (textLength > LIMIT) {
-    const $errMessage = $(`<p>${errOverLimit}</p>`).addClass('err');
-    $section.prepend($errMessage);
-    $errMessage.hide();
-    $errMessage.slideDown('slow');
-    return;
-  }
-  if ($textarea.val() === '') {
-    const $errMessage = $(`<p>${errEmpty}</p>`).addClass('err');
+  if (textLength > LIMIT || $textarea.val() === '') {
+    const errMessage = textLength > LIMIT ? errOverLimit : errEmpty;
+    const $errMessage = $(`<p>${errMessage}</p>`).addClass('err');
     $section.prepend($errMessage);
     $errMessage.hide();
     $errMessage.slideDown('slow');
@@ -77,7 +72,7 @@ const submitForm = function (e) {
   const data = $form.serialize();
 
   $.post('/tweets/', data)
-    .then((res) => {
+    .then(() => {
       loadTweets();
     })
     .catch((err) => {
