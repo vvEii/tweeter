@@ -6,7 +6,6 @@ $(document).ready(() => {
   $scrollUpBtn.on('click', scrollUp);
   $(window).scroll(() => {
     if ($(window).scrollTop() > 300) {
-      console.log('sss');
       $scrollUpBtn.show();
       const $showNewTweetArrow = $('#arrowShow');
       $showNewTweetArrow.hide();

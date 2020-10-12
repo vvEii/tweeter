@@ -4,6 +4,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 // Fake data taken from initial-tweets.json
 const LIMIT = 140;
 
@@ -13,6 +14,8 @@ $(document).ready(() => {
 });
 
 const createTweetElement = (data) => {
+  //tweet posted date
+  const dateCreated = new Date(data.created_at).toLocaleDateString();
   let $tweet = `        
     <article class="tweet">
     <header>
@@ -24,7 +27,7 @@ const createTweetElement = (data) => {
       <textarea readonly>${escape(data.content.text)}</textarea>
     </div>
     <footer>
-      <p>${new Date(data.created_at).toLocaleDateString()}</p>
+      <p>${dateCreated}</p>
       <div class="icons-container">
       <i class="fas fa-flag"></i>&nbsp;
       <i class="fas fa-retweet"></i>&nbsp;
@@ -32,7 +35,6 @@ const createTweetElement = (data) => {
       </div>
     </footer>
   </article>`;
-  console.log(data.user);
   return $tweet;
 };
 
