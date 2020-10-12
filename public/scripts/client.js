@@ -24,7 +24,7 @@ const createTweetElement = (data) => {
       <textarea readonly>${escape(data.content.text)}</textarea>
     </div>
     <footer>
-      <p>10 days ago</p>
+      <p>${new Date(data.created_at).toLocaleDateString()}</p>
       <div class="icons-container">
       <i class="fas fa-flag"></i>&nbsp;
       <i class="fas fa-retweet"></i>&nbsp;
@@ -53,7 +53,7 @@ const renderTweets = (tweets) => {
 
 const submitForm = (e) => {
   e.preventDefault();
-  const $form = $(this);
+  const $form = $('form');
   const $textarea = $('textarea');
   const textLength = $textarea.val().length;
   const $section = $('.new-tweet-container');
@@ -70,7 +70,6 @@ const submitForm = (e) => {
     return;
   }
   const data = $form.serialize();
-
   $.post('/tweets/', data)
     .then(() => {
       loadTweets();

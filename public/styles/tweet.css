@@ -47,6 +47,9 @@ header .user {
   align-items: center;
 }
 
+footer p {
+  margin-left: 10px;
+}
 footer .icons-container {
   margin-left: auto;
 }
