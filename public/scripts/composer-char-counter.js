@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
-$(document).ready(function () {
-  $('#tweet-text').on('keyup', function (e) {
+$(document).ready(() => {
+  $('#tweet-text').on('keyup', () => {
     const LIMIT = 140;
     let textLength = $('#tweet-text').val().length;
     const counter = $('.counter');
@@ -8,7 +8,7 @@ $(document).ready(function () {
     if (counter.val() < 0) {
       counter.css('color', 'red');
     } else {
-      counter.css('color','#545149');
+      counter.css('color', '#545149');
     }
   });
 });

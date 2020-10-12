@@ -7,12 +7,12 @@
 // Fake data taken from initial-tweets.json
 const LIMIT = 140;
 
-$(document).ready(function () {
+$(document).ready(() => {
   loadTweets();
   $('.new-tweet-container form').on('submit', submitForm);
 });
 
-const createTweetElement = function (data) {
+const createTweetElement = (data) => {
   let $tweet = `        
     <article class="tweet">
     <header>
@@ -37,13 +37,13 @@ const createTweetElement = function (data) {
 };
 
 //preventing XSS with escaping
-const escape = function (str) {
+const escape = (str) => {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-const renderTweets = function (tweets) {
+const renderTweets = (tweets) => {
   tweets.reverse();
   tweets.forEach((item) => {
     let $tweet = createTweetElement(item);
@@ -51,7 +51,7 @@ const renderTweets = function (tweets) {
   });
 };
 
-const submitForm = function (e) {
+const submitForm = (e) => {
   e.preventDefault();
   const $form = $(this);
   const $textarea = $('textarea');
@@ -82,7 +82,7 @@ const submitForm = function (e) {
   $('.counter').val(140);
 };
 
-const loadTweets = function () {
+const loadTweets = () => {
   $.get('/tweets/')
     .then((res) => {
       $('.tweets-container').empty();

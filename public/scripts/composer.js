@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
-$(document).ready(function () {
+$(document).ready(() => {
   const $showNewTweetArrow = $('#arrowShow');
   const $scrollUpBtn = $('.btn-scrollUp');
   $showNewTweetArrow.on('click', showNewTweet);
   $scrollUpBtn.on('click', scrollUp);
-  $(window).scroll(function () {
+  $(window).scroll(() => {
     if ($(window).scrollTop() > 300) {
       console.log('sss');
       $scrollUpBtn.show();
@@ -17,7 +17,7 @@ $(document).ready(function () {
   });
 });
 
-const showNewTweet = function () {
+const showNewTweet = () => {
   const $newTweetContainer = $('.new-tweet-container');
   if ($newTweetContainer.is(':hidden')) {
     $newTweetContainer.slideDown('slow');
@@ -28,7 +28,7 @@ const showNewTweet = function () {
   }
 };
 
-const scrollUp = function (event) {
+const scrollUp = (event) => {
   event.preventDefault();
   const $textArea = $('#tweet-text');
   $('html, body').animate({ scrollTop: 0 }, '300');
