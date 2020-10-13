@@ -31,12 +31,14 @@ header .user {
   text-align: center;
 }
 
-.tweet-content textarea {
+.tweet-content p {
   border: none;
   border-bottom: 5px solid #545149;
-  width: 90%;
   background-color: #f5f1ed;
-  height: 2.7em;
+  height: 2.6em;
+  margin: 20px;
+  text-align: start;
+  overflow-y: scroll;
 }
 
 .tweet footer {

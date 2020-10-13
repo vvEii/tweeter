@@ -24,7 +24,7 @@ const createTweetElement = (data) => {
       <p class="handle">${data.user.handle}</p>
     </header>
     <div class="tweet-content">
-      <textarea readonly>${escape(data.content.text)}</textarea>
+      <p>${escape(data.content.text)}</p>
     </div>
     <footer>
       <p>${dateCreated}</p>
